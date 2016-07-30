@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.zz.backend.model.Admin" alias="Admin"/>
+		<typeAlias type="com.zz.backend.model.Article" alias="Article"/>
+		<typeAlias type="com.zz.backend.model.Channel" alias="Channel"/>
+		<typeAlias type="com.zz.backend.model.Member" alias="Member"/>
+		<typeAlias type="com.zz.backend.model.Comment" alias="Comment"/>
+		<typeAlias type="com.zz.backend.model.Attachment" alias="Attachment"/>
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/news?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />				
+				<property name="username" value="sa" />
+				<property name="password" value="123456" />
+			</dataSource>
+		</environment> 
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/zz/backend/dao/impl/Admin.xml"/>
+		<mapper resource="com/zz/backend/dao/impl/Article.xml"/>
+		<mapper resource="com/zz/backend/dao/impl/Channel.xml"/>
+		<mapper resource="com/zz/backend/dao/impl/Member.xml"/>
+		<mapper resource="com/zz/backend/dao/impl/Comment.xml"/>
+	</mappers>
+</configuration>
